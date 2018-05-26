@@ -22,16 +22,16 @@
       </h3>
     </div>
   </header>
-  <div class="mw7 mw-2-l pa3 bg-washed-green">
-    <form action="/" method="POST">
+  <div class="mw9 pa3 bg-washed-green">
+    <form action="/api/friends" method="POST">
       <div class="flex justify-between">
         <div class="fl w-50 mr2">
           <label for="name" class="f6 b db mb2">Name</label>
-          <input id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
+          <input id="name" name="name" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc" required>
         </div>
         <div class="fl w-50">
           <label for="photo" class="f6 b db mb2">Photo</label>
-          <input id="photo" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
+          <input id="photo" name="photo" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc" required>
         </div>
       </div>
       <div id='questions'></div>
@@ -53,10 +53,10 @@
       return `<div class="f3">On a scale of 1 to 5 how do you feel about ${q}</div>
       <div class="flex justify-between mt3">
         <div>
-          <input type="radio" name="q${i}" value="1">1
+          <input type="radio" name="q${i}" value="1" required>1
         </div>
         <div>
-          <input type="radio" name="q${i}" value="2">2
+          <input type="radio" name="q${i}" value="2" checked>2
         </div>
         <div>
           <input type="radio" name="q${i}" value="3">3
