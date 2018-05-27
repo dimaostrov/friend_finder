@@ -34,11 +34,21 @@ let formData = new FormData(document.querySelector('form'));
     survey.innerHTML = renderedQs;
 
     var modal = document.querySelector(".modal");
+    const modalContent = document.querySelector('.modal-content');
     var trigger = document.querySelector(".trigger");
     var closeButton = document.querySelector(".close-button");
 
     function toggleModal() {
-        modal.classList.toggle("show-modal");
+      let buddy = document.createElement('div');
+      let userInfo;
+      fetch('/api/friends')
+        .then(res => res.json())
+        .then(data => userInfo = data)
+        .then(() => console.log(JSON.stringify(userInfo[0])));
+      console.log(userInfo)
+      buddy.innerHTML = `<div>hi</div>`
+      modalContent.appendChild(buddy);  
+      modal.classList.toggle("show-modal");
     }
 
     function windowOnClick(event) {
