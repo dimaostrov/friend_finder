@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css" />
+  <link rel="stylesheet" href="/survey.css">
 </head>
 
 <body>
@@ -36,47 +37,15 @@
       </div>
       <div id='questions'></div>
       <button id="submit" class="ba b--black bg-white black grow ma2 pa2" type="submit">Submit Your Results!</button>
-    </form>
-  </div>
-  <script>
-    let formData = new FormData(document.querySelector('form'));
-    console.log(formData);
-    const submitBtn = document.getElementById('submit');
-    let survey = document.getElementById('questions');
-    const sendDataToAPI = () => {
-      formData.append()
-    }
-
-    const questions = ['tobacco', 'alcohol', 'marijuana', 'crystal meth', 'Stalin', 'Vegemite', 'Footbal, not egg ball', 'Pabst', 'IPA', 'jenkem']
-
-    const generateRadioQuestion = (q, i) => {
-      return `<div class="f3">On a scale of 1 to 5 how do you feel about ${q}</div>
-      <div class="flex justify-between mt3">
-        <div>
-          <input type="radio" name="q${i}" value="1" required>1
-        </div>
-        <div>
-          <input type="radio" name="q${i}" value="2" checked>2
-        </div>
-        <div>
-          <input type="radio" name="q${i}" value="3">3
-        </div>
-        <div>
-          <input type="radio" name="q${i}" value="4">4
-        </div>
-        <div>
-          <input type="radio" name="q${i}" value="5">5
+      <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>Hello, I am a modal!</h1>
         </div>
       </div>
-      <hr>`
-    };
-
-    const renderedQs = questions.map((x, i) => generateRadioQuestion(x, i)).join('');
-    console.log(renderedQs);
-    survey.innerHTML = renderedQs;
-
-    submitBtn.addEventListener('click', sendDataToAPI)
-  </script>
+    </form>
+  </div>
+  <script src="/survey.js"></script>
 </body>
 
 </html>

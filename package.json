@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "description": "Just an app with Express and Node",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "node-sass-middleware": "^0.11.0",
+    "nodemon": "^1.17.5",
+    "serve-static": "^1.13.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "devstart": "nodemon serves.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +26,5 @@
   "bugs": {
     "url": "https://github.com/dimaostrov/friend_finder/issues"
   },
-  "homepage": "https://github.com/dimaostrov/friend_finder#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "nodemon": "^1.17.5",
-    "tachyons": "^4.9.1"
-  }
+  "homepage": "https://github.com/dimaostrov/friend_finder#readme"
 }

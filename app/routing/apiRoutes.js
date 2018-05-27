@@ -12,7 +12,7 @@ router.post('/friends', (req, res, next) => {
   let answersArray = Object.values(answers);
   const user = { name, photo, answersArray };
   friends.push(user);
-  res.json(friends)
+  //res.json(friends)
 });
 
 module.exports = router;

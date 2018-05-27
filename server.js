@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const serveStatic = require('serve-static');
 
 const htmlRouter = require('./app/routing/htmlRoutes');
 const apiRouter = require('./app/routing/apiRoutes');
@@ -11,6 +12,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(serveStatic('app/public'));
 
 app.use('/html', htmlRouter);
 app.use('/api', apiRouter);
